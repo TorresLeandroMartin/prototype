@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+
+.container-header {
+  width: 90%;
+  margin: auto;
+}
+
+/* Navigation */
+
+.nav-main {
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 20px 0px;
+}
+
+.nav-brand {
+  width: 60px;
+  border-radius: 30%;
+}
+
+/* Nav left */
+
+.nav-main ul {
+  display: flex;
+}
+
+.nav-main ul li {
+  padding: 10px;
+}
+
+.nav-main ul.nav-menu a {
+  padding: 5px;
+}
+
+.nav-main ul.nav-menu a:hover {
+  border-bottom: 2px solid black;
+}

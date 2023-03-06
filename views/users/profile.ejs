@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../../stylesheets/stylesprofile.css" />
+    <!-- Iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alef&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <%- include('./partials/header') %>
+
+    <main>
+      <div class="container">
+        <div class="user-box">
+          <figure>
+            <img
+            src="../../images/users/<%= user.image %>"
+            alt="<%= user.image %>"
+            />
+          </figure>
+          <div class="user-details">
+          <h2>Hola, usuario <%= user.email %></h2>
+          <p>Detalle del usuario</p>
+          <p>Nombre: <%= user.firstname %></p>
+          <p>Apellido: <%= user.lastname %></p>
+          <p>Direccion de mail: <%= user.email %></p>
+          <a href="/users/logout">Log Out</a>
+        </div>
+        </div>
+      </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>

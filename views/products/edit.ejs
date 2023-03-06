@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Page</title>
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="../../stylesheets/stylesedit.css" />
+    <!-- Iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alef&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <%- include('./partials/header') %>
+
+    <main>
+      <div class="container">
+        <h3>Estas editando el producto: <%=products.name%></h3>
+
+        <div class="container-form">
+          <!-- Cuando aprenda a cargar imagenes debo agregarle un input para eso -->
+          <form
+            action="/products/edit/<%=products.id%>?_method=PUT"
+            method="POST"
+            class="form-values"
+          >
+            <label for="name">Nombre del products: <%=products.name%></label>
+            <input type="text" name="name" id="name" />
+            <label for="price">Precio actual: <%=products.price%></label>
+            <input type="number" name="price" id="price" />
+            <label for="size">Talle actual: <%=products.size%></label>
+            <select name="size" id="size">
+              <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">L</option>
+            </select>
+            <label for="color">Color actual: <%=products.color%></label>
+            <input type="text" name="color" id="color" />
+
+            <label for="description">Descripcion del producto</label>
+            <textarea name="description" id="description" cols="30" rows="10"><%=products.description%></textarea>
+
+            <button type="submit" class="btn">Editar</button>
+          </form>
+
+          <form action="/products/edit/<%=products.id%>?_method=DELETE" method="POST" class="form-delete">
+            <label for="delete">Desea eliminar <%=products.name%>?</label>
+            <input type="submit" name="delete" value="Eliminar" class="btn">
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>

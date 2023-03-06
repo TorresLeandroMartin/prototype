@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page</title>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="../../stylesheets/stylesregister.css" />
+    <!-- Iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alef&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <%- include('./partials/header') %>
+
+      <div class="container">
+        <div class="container-form">
+          <p>Ya tenes cuenta? <a href="/users/login">Ingresa!</a></p>
+          <p>Carga tus datos aqui!</p>
+          <p>V</p>
+          <form
+            action="/users/register"
+            method="POST"
+            name="file"
+            class="form"
+            enctype="multipart/form-data"
+          >
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              name="firstname"
+              value="<%= locals.oldData ? oldData.firstname : null %>"
+              class="form-control <%= locals.errors && errors.firstname ? 'is-invalid' : null %>"
+            />
+            <% if (locals.errors && errors.firstname) { %>
+            <div class="text-danger"><%= errors.firstname.msg %></div>
+            <% } %>
+
+            <label for="apellido">Apellido</label>
+            <input
+              type="text"
+              name="lastname"
+              value="<%= locals.oldData ? oldData.lastname : null %>"
+              class="form-control <%= locals.errors && errors.lastname ? 'is-invalid' : null %>"
+            />
+            <% if (locals.errors && errors.lastname) { %>
+            <div class="text-danger"><%= errors.lastname.msg %></div>
+            <% } %>
+
+            <label for="direccion-de-mail">Direccion de mail</label>
+            <input
+              type="text"
+              name="email"
+              id="direccion-de-mail"
+              value="<%= locals.oldData ? oldData.email : null %>"
+              class="form-control <%= locals.errors && errors.email ? 'is-invalid' : '' %>"
+            />
+            <% if (locals.errors && errors.email) { %>
+            <div class="text-danger"><%= errors.email.msg %></div>
+            <% } %>
+
+            <label for="password">Contrasena</label>
+            <input
+              type="password"
+              name="password"
+              value="<%= locals.oldData ? oldData.password : null %>"
+              class="form-control <%= locals.errors && errors.password ? 'is-invalid' : '' %>"
+            />
+            <% if (locals.errors && errors.password) { %>
+            <div class="text-danger"><%= errors.password.msg %></div>
+            <% } %>
+
+            <label for="file">Carga tu Avatar</label>
+            <input 
+            type="file" 
+            name="file" 
+            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : '' %>"
+            value="<%= locals.oldData ? oldData.file : null %>"
+            />
+            <% if (locals.errors && errors.file) { %>
+            <div><%= errors.file.msg %></div>
+            <% } %>
+
+            <input type="submit" value="Registrarse" class="registrarse" />
+          </form>
+        </div>
+      </div>
+      <%- include('./partials/footer') %>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<head>
+  <link rel="stylesheet" href="../../stylesheets/stylesHeader.css" />
+</head>
+
+<header>
+  <div class="container-header">
+    <nav id="header" class="nav-main">
+      <a href="/"
+        ><img src="../../images/botines.jpg" alt="LOGO" class="nav-brand"
+      /></a>
+      <ul class="nav-menu">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/products">Productos</a></li>
+        <li><a href="#formulario">Contactanos</a></li>
+      </ul>
+
+      <!-- SEGUN EL VIDEO FUNCIONA EXACTAMENTE AL REVES DE COMO LO TENGO ESCRITO PERO CUANDO LO  -->
+      <!-- LO CONFIGURO COMO EN EL VIDEO NO FUNCIONA IGUAL -->
+      <ul class="nav-menu-right">
+      <% if (locals.isLogged) { %>
+
+        <li>
+          <a href="/users/profile">Profile</a>
+        </li>
+        <% } else { %>
+
+        <li>
+          <a href="/users/login">Login</a>
+        </li>
+        <li>
+          <a href="/users/register">Register</a>
+        </li>
+        <% } %>
+      </ul>
+        <!-- hasta aca -->
+        <!-- me quede en una hora 38 minutos del video-->
+        <!-- <li>
+          <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </li> -->
+    </nav>
+    <hr />
+  </div>
+</header>

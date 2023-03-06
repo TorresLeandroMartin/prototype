@@ -1,0 +1,38 @@
+[
+  {
+    "name": "UNO",
+    "price": "1000",
+    "size": "s",
+    "color": "Negro",
+    "description": "Descripcion de UNO",
+    "image": "img-products1676234138650.png",
+    "id": 1
+  },
+  {
+    "name": "ProductoDOS",
+    "price": "2000",
+    "size": "s",
+    "color": "Verde",
+    "description": "Esta es la descripcion del producto",
+    "image": "img-products1676234138650.png",
+    "id": 2
+  },
+  {
+    "name": "TRES",
+    "price": "3000",
+    "size": "s",
+    "color": "Verde",
+    "description": "Esta es la descripcion del producto",
+    "image": "img-products1676234138650.png",
+    "id": 3
+  },
+  {
+    "name": "ProductoConImagen",
+    "price": "9000",
+    "size": "s",
+    "color": "Rojo",
+    "description": "Prueba producto con imagen",
+    "image": "img-products1676234138650.png",
+    "id": 4
+  }
+]

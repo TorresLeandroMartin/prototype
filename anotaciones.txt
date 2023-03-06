@@ -1,0 +1,229 @@
+Vistas:
+
+home
+
+/products - listo archivo ejs - listo ruta
+/products/productdetail/:id - ejs -
+/procucts/cart - ejs
+
+/users - ejs
+/users/userdetails/:id - ejs
+/users/register - ejs
+/users/login - ejs
+
+ecommerce de botines
+
+--
+
+index.ejs no esta terminado y deberia ver como utilizar el index de products como home y ya
+
+--
+
+editar no funciona bien - si eligo editar todos los campos funciona bien
+pero si solo quisiera editar 1 campo el problema esta aca:
+
+    // Devuelve nuevo array de productos
+    let newProducts = products.map((product) => {
+      if (product.id == idProduct) {
+        product = { ...updatesToProduct };
+      }
+
+al devolver un nuevo array estamos obligados a siempre editar todos los cambios, es como volver a crear el producto
+
+--
+
+            <!-- <label for="id">Id del producto</label>
+            <input type="text" name="id" id="id" required /> -->
+
+            --
+
+
+            pagina de description - elimine lo siguiente para reemplazarlo por chat gpt code
+
+                            <div class="container-top">
+                    <div class="product-infomartion">
+                        <figure><img src="../../images/botin3.jpg" alt="img-article"></figure>
+                        <div class="information">
+                            <p class="header">Nombre Producto</p>
+                            <p class="price">$ XXXX,XX</p>
+                            <p class="description">Caracteristicas</p>
+                            <p class="text-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                                numquam. Eius fugiat minima minus similique voluptatibus vel porro nulla suscipit iste
+                                eos fuga consequuntur omnis repellendus, repudiandae quidem. Voluptates voluptas
+                                aperiam, earum ducimus neque cum magni, nam aliquam sint illo laboriosam. Et sed quasi
+                                earum nisi lorem30 similique repellat cupiditate nulla.</p>
+                        </div>
+                        <input value="Agregar al carrito" type="submit" name="add-to-cart" id="add-to-cart"
+                            class="btn-cart">
+                    </div>
+                </div>
+                <div class="container-bottom">
+
+                    <div class="product-infomartion">
+                        <% products.forEach(productoActual=> { %>
+                            <div class="inside-div">
+                                <figure><img src="../../images/botin3.jpg" alt="img-article"></figure>
+                                <div class="information">
+                                    <p class="header">
+                                        <%=productoActual.name%>
+                                    </p>
+                                    <p class="price">
+                                        <%=productoActual.price%>
+                                    </p>
+                                    <p class="size">
+                                        <%=productoActual.size%>
+                                    </p>
+                                    <p class="text-body">
+                                        <%=productoActual.description%>
+                                    </p>
+                                </div>
+                                <input value="Agregar al carrito" type="submit" name="add-to-cart" id="add-to-cart"
+                                    class="btn-cart">
+                            </div>
+                            <% }) %>
+                    </div>
+                </div>
+
+                --
+
+                                <div class="product-information">
+                    <% if (!products || !products.length) { %>
+                      <p class="error-message">No products found</p>
+                    <% } else { %>
+                      <% products.forEach(product => { %>
+                        <article class="product-card">
+                          <figure class="product-image">
+                            <img src="<%= product.imagePath %>" alt="<%= product.name %>">
+                          </figure>
+                          <div class="product-details">
+                            <h3 class="product-name"><%= product.name %></h3>
+                            <p class="product-price">$<%= product.price %></p>
+                            <p class="product-size"><%= product.size %></p>
+                            <p class="product-description"><%= product.description %></p>
+                            <input type="submit" value="Add to Cart" class="add-to-cart-button">
+                          </div>
+                        </article>
+                      <% }); %>
+                    <% } %>
+                  </div>
+
+                  ORIGINAL DE CHATGPT
+
+                  ---
+
+La siguiente pieza de codigo no funciona en la description page porque en description page solamente le paso 1 elemento para mostrar en cambio este codigo recorre un array
+y muestra todos los elementos dentro 
+
+                                  <div class="product-information">
+                    <% if (!product || !product.length) { %>
+                      <p class="error-message">No product found</p>
+                    <% } else { %>
+                      <% product.forEach(product => { %>
+                        <article class="product-card">
+                          <figure class="product-image">
+                            <img src="../../images/botin3.jpg" alt="<%= product.name %>">
+                          </figure>
+                          <div class="product-details">
+                            <h3 class="product-name"><%= product.name %></h3>
+                            <p class="product-price">$<%= product.price %></p>
+                            <p class="product-size"><%= product.size %></p>
+                            <p class="product-description"><%= product.description %></p>
+                            <input type="submit" value="Add to Cart" class="add-to-cart-button">
+                          </div>
+                        </article>
+                      <% }); %>
+                    <% } %>
+                  </div>
+
+                  en cambio, esta pieza de codigo muestra el producto que le pasamos por el controller nomas
+
+                                    <div class="product-information">
+                    <% if (!product) { %>
+                      <p class="error-message">No product found</p>
+                    <% } else { %>
+                      <article class="product-card">
+                        <figure class="product-image">
+                          <img src="<%=product.imagePath%>" alt="<%=product.name%>">
+                        </figure>
+                        <div class="product-details">
+                          <h3 class="product-name"><%=product.name%></h3>
+                          <p class="product-price">$<%=product.price%></p>
+                          <p class="product-size"><%=product.size%></p>
+                          <p class="product-description"><%=product.description%></p>
+                          <input type="submit" value="Add to Cart" class="add-to-cart-button">
+                        </div>
+                      </article>
+                    <% } %>
+                  </div>
+
+                  --
+
+                  productos 
+
+                  ya se puede crear producto con imagen y estos productos son visible desde pagina de /products con su respectiva imagen 
+
+                  --
+
+por que diablos el register envia la imagen cuando no pasa las validaciones
+
+en myApp3
+
+npm install express-validator - listo
+npm install multer - listo
+---
+app.js >
+app.use(express.urlencoded({ extended: false })); - listo
+
+---
+usersRouter.js >
+
+const multer = require('multer') - listo
+const path = require('path') - listo
+const { check } = require('express-validator') - listo
+
+
+const storage = multer.diskStorage({ - listo
+  destination: (req, file, cb) => {
+    let folder = path.join(__dirname, "../public/images/users/");
+    cb(null, folder);
+  },
+  filename: (req, file, cb) => {
+    let imageName = "img-avatar" + Date.now() + path.extname(file.originalname);
+    cb(null, imageName);
+  },
+}); 
+
+const uploadFile = multer({ storage }); - listo
+
+router.post("/register",uploadFile.single("file"),userController.registerAction); - listo
+---
+en userController.js
+const { validationResul } = require('express-validator') - listo
+---
+en register.ejs
+
+enctype="multipart/form-data" - listo
+
+--
+
+para database
+
+producto:
+
+● Identificador (ya hablaremos más sobre este campo): id
+● Nombre del producto: name
+● Descripción: description
+● Imagen: image
+● Categoría: category
+● Colores (o cualquier otro campo similar como: talle): colors
+● Precio: price
+
+usuario:
+
+● Identificador: id
+● Nombre: firstName
+● Apellido: lastName
+● Email: email
+● Contraseña: password
+● Categoría: category
+● Imagen: image

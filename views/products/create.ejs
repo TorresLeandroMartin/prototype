@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Page</title>
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="../../stylesheets/stylescreate.css" />
+    <!-- Iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alef&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <%- include('./partials/header') %>
+
+    <main>
+      <div class="container">
+        <div class="container-form">
+          <form
+            action="/products/create"
+            method="POST"
+            name="file"
+            class="form-values"
+            enctype="multipart/form-data"
+          >
+            <label for="name">Nombre del producto</label>
+            <input type="text" name="name" id="name" required />
+            <label for="price">Precio</label>
+            <input type="number" name="price" id="price" required />
+            <label for="size">Talle</label>
+            <select name="size" id="size" required>
+              <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">S</option>
+            </select>
+            <label for="color">Color</label>
+            <input type="text" name="color" id="color" required />
+            <label for="img-product">Carga imagen del producto</label>
+            <input type="file" name="file" />
+            <label for="description">Descripcion del producto</label>
+            <textarea
+              name="description"
+              id="description"
+              cols="30"
+              rows="10"
+            ></textarea>
+
+            <input type="submit" value="Crear" class="btn" />
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>

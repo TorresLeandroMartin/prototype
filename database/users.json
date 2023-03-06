@@ -1,0 +1,89 @@
+[
+ {
+  "firstname": "Leandro",
+  "lastname": "Torres",
+  "email": "email1@email.com",
+  "password": "12345",
+  "image": "img-avatar1676338053826.png",
+  "id": 1
+ },
+ {
+  "firstname": "Usuario2",
+  "lastname": "Usuario2",
+  "email": "email2@email.com",
+  "password": "$2b$10$qBvLssObhUxxy.5jj1CY4OjU7Z7SB8gaKmiBdLJKLArGMjMeG0mju",
+  "image": "img-avatar1676339722224.png",
+  "id": 2
+ },
+ {
+  "firstname": "Leandro",
+  "lastname": "Torres",
+  "email": "leandro@leandro.com",
+  "password": "$2b$10$GpykXVaDlbQ7BDrNGDveUeaiQ9I4nHrfynflp31Am5t.BkU7BUq/W",
+  "image": "img-avatar1676344832787.png",
+  "id": 3
+ },
+ {
+  "id": 4,
+  "firstname": "Prueba",
+  "lastname": "Prueba",
+  "email": "prueba@email.com",
+  "password": "12345"
+ },
+ {
+  "id": 5,
+  "firstname": "Leandro55",
+  "lastname": "Torres5",
+  "email": "email5@email.com",
+  "password": "12345",
+  "avatar": "img-prueba.png"
+ },
+ {
+  "id": 6,
+  "firstname": "Usuario6",
+  "lastname": "Usuario6",
+  "email": "email6@email.com",
+  "password": "$2b$10$R4D3BnOEwFyDpyAJymVLzO2k/HO2a90QElWxJW6XPpDMh/NKfL0EK",
+  "avatar": "img-prueba.png"
+ },
+ {
+  "id": 7,
+  "firstname": "leandro7",
+  "lastname": "torres7",
+  "email": "email7@email.com",
+  "password": "$2b$10$2akj29kbTjgPB9tfkIemXuoZECiUX6nLrGXLvqFRwurY75ydelgwC",
+  "avatar": "img-prueba.png"
+ },
+ {
+  "id": 8,
+  "firstname": "asd8",
+  "lastname": "asd8",
+  "email": "asd8@email.com",
+  "password": "$2b$10$VqGzWSv8LRRfUYKQey82gOJ8vZ/REzFhaVhYksZjBGcS2ZhlbVyHS",
+  "image": "img-prueba.png"
+ },
+ {
+  "id": 9,
+  "firstname": "asd9",
+  "lastname": "asd9",
+  "email": "asd9@email.com",
+  "password": "$2b$10$.GltxAc9YR52DXFRcMsrku9GjJb7aaIsm.afQtWmP9O1U/lPVnuWS",
+  "image": "img-avatar1676602209133.png"
+ },
+ {
+  "id": 10,
+  "firstname": "Leandro",
+  "lastname": "Torres",
+  "email": "email10@email.com",
+  "password": "$2b$10$wI2vpEe5.PKbezKIn22AoOBc5DXxd8CDTHiqCT8UvrI6Dweieikjy",
+  "image": "img-avatar1676602944175.png"
+ },
+ {
+  "id": 11,
+  "firstname": "User11",
+  "lastname": "Lastname11",
+  "email": "email11@email.com",
+  "password": "$2b$10$WP/AqMV6DlS.RW3cH/6ZauCWunNFBjb2YXVPbHOtw/9JcXSL2F446",
+  "image": "img-avatar1676663664498.png"
+ }
+]
