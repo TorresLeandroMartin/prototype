@@ -4,5 +4,7 @@ function authMiddleware(req, res, next) {
     }
     next();
   }
+
+  // Hola
   
   module.exports = authMiddleware;
