@@ -28,6 +28,4 @@ const validationMiddleware = [
   }),
 ];
 
-// CAMBIOS REALIZADOS EN TESTING
-
 module.exports = validationMiddleware;
