@@ -227,3 +227,26 @@ usuario:
 ● Contraseña: password
 ● Categoría: category
 ● Imagen: image
+
+--
+
+En rama testing:
+
+npm install --save sequelize
+npm install --save mysql2
+
+touch .sequelizerc
+
+dentro de .sequelizerc
+
+var path = require('path')
+
+module.exports = {
+  'config':          path.resolve('./database/config', 'config.js'),
+  'migrations-path': path.resolve('./database/migrations'),
+  'models-path':     path.resolve('./database/models'),
+  'seeders-path':    path.resolve('./database/seeders'),
+}
+
+en config.js estan las conexiones a la deberia
+
