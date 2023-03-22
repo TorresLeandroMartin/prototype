@@ -9,26 +9,26 @@ const uploadFile = require('../middlewares/multerMiddlewareForUsers');
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 
-// URL /users
-router.get("/", userController.index);
+// // URL /users
+// router.get("/", userController.index);
 
-// URL /users/userdetails/numerodeidusuario
-router.get("/userdetails/:id", userController.details);
+// // URL /users/userdetails/numerodeidusuario
+// router.get("/userdetails/:id", userController.details);
 
-// URL /users/register
-router.get("/register", guestMiddleware, userController.register);
+// // URL /users/register
+// router.get("/register", guestMiddleware, userController.register);
 
-// URL /users/register
-router.post("/register", uploadFile.single("file"), validationMiddleware, userController.registerAction);
+// // URL /users/register
+// router.post("/register", uploadFile.single("file"), validationMiddleware, userController.registerAction);
 
-// URL /users/login
-router.get("/login", guestMiddleware, userController.login);
+// // URL /users/login
+// router.get("/login", guestMiddleware, userController.login);
 
-// URL /users/login - Las validaciones para este no las hizo en el video
-router.post("/login", userController.loginProcess);
+// // URL /users/login - Las validaciones para este no las hizo en el video
+// router.post("/login", userController.loginProcess);
 
-router.get("/logout", userController.logOut);
+// router.get("/logout", userController.logOut);
 
-router.get("/profile", authMiddleware, userController.profile);
+// router.get("/profile", authMiddleware, userController.profile);
 
 module.exports = router;

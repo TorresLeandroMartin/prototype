@@ -1,5 +1,5 @@
-import { Product } from './Product.js'
-import { User } from "./User.js"
+const { Product } = require( './Product')
+const { User } = require( './User')
 
 module.exports = function (sequelize, dataTypes) {
     let alias = "Orders";

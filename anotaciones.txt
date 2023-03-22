@@ -250,3 +250,5 @@ module.exports = {
 
 en config.js estan las conexiones a la deberia
 
+userLoggedMiddleware esta desconectado. No funciona con el loggedMiddleware. 
+Creo que tengo que hacer toda la app de nuevo. realmente toda de cero. 
